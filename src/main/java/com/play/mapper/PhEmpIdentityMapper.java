@@ -1,10 +1,10 @@
-package com.xuyantao.ctas.test.mapper;
+package com.play.mapper;
 
 
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.xuyantao.ctas.test.entity.PhEmpIdentity;
+import com.play.entity.PhEmpIdentity;
 @Mapper
 public interface PhEmpIdentityMapper {
     int deleteByPrimaryKey(Long empId);

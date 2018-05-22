@@ -1,4 +1,4 @@
-package com.xuyantao;
+package com.play;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

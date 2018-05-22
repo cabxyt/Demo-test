@@ -1,4 +1,4 @@
-package com.xuyantao.ctas.test.entity;
+package com.play.entity;
 
 import java.util.Date;
 

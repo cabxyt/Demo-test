@@ -1,12 +1,12 @@
-package com.xuyantao.controller;
+package com.play.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xuyantao.ctas.test.entity.PhEmpIdentity;
-import com.xuyantao.ctas.test.mapper.PhEmpIdentityMapper;
+import com.play.entity.PhEmpIdentity;
+import com.play.mapper.PhEmpIdentityMapper;
 
 @RestController
 public class TestController {
