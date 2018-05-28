@@ -1,4 +1,4 @@
-package com.play.entity;
+package com.play.phemp.dao.entity;
 
 import java.util.Date;
 

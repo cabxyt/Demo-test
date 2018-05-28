@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xuyantao.ctas.test.mapper.PhEmpIdentityMapper" >
-  <resultMap id="BaseResultMap" type="com.xuyantao.ctas.test.entity.PhEmpIdentity" >
+  <resultMap id="BaseResultMap" type="com.play.phemp.dao.entity.PhEmpIdentity" >
     <id column="EMP_ID" property="empId" jdbcType="BIGINT" />
     <result column="UNIQU_NO" property="uniquNo" jdbcType="BIGINT" />
     <result column="EMP_NAME" property="empName" jdbcType="VARCHAR" />
@@ -34,7 +34,7 @@
     delete from ph_emp_identity
     where EMP_ID = #{empId,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xuyantao.ctas.test.entity.PhEmpIdentity" >
+  <insert id="insert" parameterType="com.play.phemp.dao.entity.PhEmpIdentity" >
     insert into ph_emp_identity (EMP_ID, UNIQU_NO, EMP_NAME, 
       ID_TYPE, GENDER, ID_CODE, 
       MOBILE, EMAIL, BIRTH_DATE, 
@@ -48,7 +48,7 @@
       #{accessToken,jdbcType=VARCHAR}, #{tokenTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
       #{creatorName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.xuyantao.ctas.test.entity.PhEmpIdentity" >
+  <insert id="insertSelective" parameterType="com.play.phemp.dao.entity.PhEmpIdentity" >
     insert into ph_emp_identity
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="empId != null" >
@@ -157,7 +157,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xuyantao.ctas.test.entity.PhEmpIdentity" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.play.phemp.dao.entity.PhEmpIdentity" >
     update ph_emp_identity
     <set >
       <if test="uniquNo != null" >
@@ -211,7 +211,7 @@
     </set>
     where EMP_ID = #{empId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xuyantao.ctas.test.entity.PhEmpIdentity" >
+  <update id="updateByPrimaryKey" parameterType="com.play.phemp.dao.entity.PhEmpIdentity" >
     update ph_emp_identity
     set UNIQU_NO = #{uniquNo,jdbcType=BIGINT},
       EMP_NAME = #{empName,jdbcType=VARCHAR},

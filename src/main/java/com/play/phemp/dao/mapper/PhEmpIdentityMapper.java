@@ -1,19 +1,20 @@
-package com.play.mapper;
+package com.play.phemp.dao.mapper;
+
 
 
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.play.entity.PhEmpIdentity;
+import com.play.phemp.dao.entity.PhEmpIdentity;
 @Mapper
 public interface PhEmpIdentityMapper {
-    int deleteByPrimaryKey(Long empId);
+    int deleteByPrimaryKey(Long key);
 
     int insert(PhEmpIdentity record);
 
     int insertSelective(PhEmpIdentity record);
 
-    PhEmpIdentity selectByPrimaryKey(Long empId);
+    PhEmpIdentity selectByPrimaryKey(Long key);
 
     int updateByPrimaryKeySelective(PhEmpIdentity record);
 
