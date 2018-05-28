@@ -20,4 +20,6 @@ public interface PhExamMapper {
     int updateByPrimaryKey(PhExam record);
     
     List<PhExam> query(PhExam record);
+    
+    List<PhExam> queryCount(PhExam record);
 }

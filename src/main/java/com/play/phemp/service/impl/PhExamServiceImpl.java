@@ -54,4 +54,9 @@ public class PhExamServiceImpl implements PhExamService {
 		// TODO Auto-generated method stub
 		return phExamMapper.query(record);
 	}
+	@Override
+	public List<PhExam> queryCount(PhExam record) {
+		// TODO Auto-generated method stub
+		return phExamMapper.queryCount(record);
+	}
 }
