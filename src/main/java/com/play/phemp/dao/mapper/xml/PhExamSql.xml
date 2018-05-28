@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.play.phemp.dao.mapper.PhExamMapper" >
+  <sql id="Base_Column_List" >
+				 EXAM_ID examId,	  	  	 				
+		 EMP_ID empId,	  	  	 				
+		 APPOINT_ID appointId,	  	  	 				
+		 EXAP_ORG_ID exapOrgId,	  	  	 				
+		 EXAP_ORG_NAME exapOrgName,	  	  	 				
+		 EXAM_STATUS examStatus,	  	  	 				
+		 COMPANY_NAME companyName,	  	  	 				
+		 EXAM_YEAR examYear,	  	  	 				
+		 EXAM_NO examNo,	  	  	 				
+		 AUTH_FLAG authFlag,	  	  	 				
+		 REPORT_ID reportId,	  	  	 				
+		 REPORT_ANA_ID reportAnaId,	  	  	 				
+		 EXAM_COMBO examCombo,	  	  	 				
+		 EXAM_TIME examTime,	  	  	 				
+		 APPOINTMENT_TIME appointmentTime,	  	  	 				
+		 CANCEL_TIME cancelTime,	  	  	 				
+		 REPORT_BACK_TIME reportBackTime,	  	  	 				
+		 UPLOAD_EMP_ID uploadEmpId,	  	  	 				
+		 UPLOAD_REPORT_TIME uploadReportTime,	  	  	 				
+		 GET_DATA_TIME getDataTime,	  	  	 				
+		 CREATE_TIME createTime,	  	  	 				
+		 error error,	  	  	 				
+		 exap_org_parent_name exapOrgParentName,	  	  	 				
+		 exap_org_parent_id exapOrgParentId	  	  	 				
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.play.phemp.dao.entity.PhExam" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ph_exam
+    where EXAM_ID = #{value}
+  </select>
+  <select id="query"  parameterType="com.play.phemp.dao.entity.PhExam" resultType="com.play.phemp.dao.entity.PhExam">
+    select 
+    <include refid="Base_Column_List" />
+    from ph_exam
+    where 1=1
+		<if test="examId != null">
+   			 AND EXAM_ID = #{examId}
+  		</if> 
+		<if test="empId != null">
+   			 AND EMP_ID = #{empId}
+  		</if> 
+		<if test="appointId != null">
+   			 AND APPOINT_ID = #{appointId}
+  		</if> 
+		<if test="exapOrgId != null">
+   			 AND EXAP_ORG_ID = #{exapOrgId}
+  		</if> 
+		<if test="exapOrgName != null">
+   			 AND EXAP_ORG_NAME = #{exapOrgName}
+  		</if> 
+		<if test="examStatus != null">
+   			 AND EXAM_STATUS = #{examStatus}
+  		</if> 
+		<if test="companyName != null">
+   			 AND COMPANY_NAME = #{companyName}
+  		</if> 
+		<if test="examYear != null">
+   			 AND EXAM_YEAR = #{examYear}
+  		</if> 
+		<if test="examNo != null">
+   			 AND EXAM_NO = #{examNo}
+  		</if> 
+		<if test="authFlag != null">
+   			 AND AUTH_FLAG = #{authFlag}
+  		</if> 
+		<if test="reportId != null">
+   			 AND REPORT_ID = #{reportId}
+  		</if> 
+		<if test="reportAnaId != null">
+   			 AND REPORT_ANA_ID = #{reportAnaId}
+  		</if> 
+		<if test="examCombo != null">
+   			 AND EXAM_COMBO = #{examCombo}
+  		</if> 
+		<if test="examTime != null">
+   			 AND EXAM_TIME = #{examTime}
+  		</if> 
+		<if test="appointmentTime != null">
+   			 AND APPOINTMENT_TIME = #{appointmentTime}
+  		</if> 
+		<if test="cancelTime != null">
+   			 AND CANCEL_TIME = #{cancelTime}
+  		</if> 
+		<if test="reportBackTime != null">
+   			 AND REPORT_BACK_TIME = #{reportBackTime}
+  		</if> 
+		<if test="uploadEmpId != null">
+   			 AND UPLOAD_EMP_ID = #{uploadEmpId}
+  		</if> 
+		<if test="uploadReportTime != null">
+   			 AND UPLOAD_REPORT_TIME = #{uploadReportTime}
+  		</if> 
+		<if test="getDataTime != null">
+   			 AND GET_DATA_TIME = #{getDataTime}
+  		</if> 
+		<if test="createTime != null">
+   			 AND CREATE_TIME = #{createTime}
+  		</if> 
+		<if test="error != null">
+   			 AND error = #{error}
+  		</if> 
+		<if test="exapOrgParentName != null">
+   			 AND exap_org_parent_name = #{exapOrgParentName}
+  		</if> 
+		<if test="exapOrgParentId != null">
+   			 AND exap_org_parent_id = #{exapOrgParentId}
+  		</if> 
+  </select>
+  <insert id="insert" parameterType="com.play.phemp.dao.entity.PhExam" >
+    insert into ph_exam 
+      (
+		 EXAM_ID,				
+		 EMP_ID,				
+		 APPOINT_ID,				
+		 EXAP_ORG_ID,				
+		 EXAP_ORG_NAME,				
+		 EXAM_STATUS,				
+		 COMPANY_NAME,				
+		 EXAM_YEAR,				
+		 EXAM_NO,				
+		 AUTH_FLAG,				
+		 REPORT_ID,				
+		 REPORT_ANA_ID,				
+		 EXAM_COMBO,				
+		 EXAM_TIME,				
+		 APPOINTMENT_TIME,				
+		 CANCEL_TIME,				
+		 REPORT_BACK_TIME,				
+		 UPLOAD_EMP_ID,				
+		 UPLOAD_REPORT_TIME,				
+		 GET_DATA_TIME,				
+		 CREATE_TIME,				
+		 error,				
+		 exap_org_parent_name,				
+		 exap_org_parent_id				
+      )
+    values 
+      (
+		   #{examId:BIGINT},
+		   #{empId:BIGINT},
+		   #{appointId:VARCHAR},
+		   #{exapOrgId:VARCHAR},
+		   #{exapOrgName:VARCHAR},
+		   #{examStatus:NUMERIC},
+		   #{companyName:VARCHAR},
+		   #{examYear:NUMERIC},
+		   #{examNo:VARCHAR},
+		   #{authFlag:NUMERIC},
+		   #{reportId:VARCHAR},
+		   #{reportAnaId:VARCHAR},
+		   #{examCombo:VARCHAR},
+		   #{examTime:TIMESTAMP},
+		   #{appointmentTime:TIMESTAMP},
+		   #{cancelTime:TIMESTAMP},
+		   #{reportBackTime:TIMESTAMP},
+		   #{uploadEmpId:VARCHAR},
+		   #{uploadReportTime:TIMESTAMP},
+		   #{getDataTime:TIMESTAMP},
+		   #{createTime:TIMESTAMP},
+		   #{error:VARCHAR},
+		   #{exapOrgParentName:VARCHAR},
+		   #{exapOrgParentId:VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.play.phemp.dao.entity.PhExam" >
+		update
+		  ph_exam
+		set
+			#{EMP_ID =  empId:BIGINT},
+			#{APPOINT_ID =  appointId:VARCHAR},
+			#{EXAP_ORG_ID =  exapOrgId:VARCHAR},
+			#{EXAP_ORG_NAME =  exapOrgName:VARCHAR},
+			#{EXAM_STATUS =  examStatus:NUMERIC},
+			#{COMPANY_NAME =  companyName:VARCHAR},
+			#{EXAM_YEAR =  examYear:NUMERIC},
+			#{EXAM_NO =  examNo:VARCHAR},
+			#{AUTH_FLAG =  authFlag:NUMERIC},
+			#{REPORT_ID =  reportId:VARCHAR},
+			#{REPORT_ANA_ID =  reportAnaId:VARCHAR},
+			#{EXAM_COMBO =  examCombo:VARCHAR},
+			#{EXAM_TIME =  examTime:TIMESTAMP},
+			#{APPOINTMENT_TIME =  appointmentTime:TIMESTAMP},
+			#{CANCEL_TIME =  cancelTime:TIMESTAMP},
+			#{REPORT_BACK_TIME =  reportBackTime:TIMESTAMP},
+			#{UPLOAD_EMP_ID =  uploadEmpId:VARCHAR},
+			#{UPLOAD_REPORT_TIME =  uploadReportTime:TIMESTAMP},
+			#{GET_DATA_TIME =  getDataTime:TIMESTAMP},
+			#{CREATE_TIME =  createTime:TIMESTAMP},
+			#{error =  error:VARCHAR},
+			#{exap_org_parent_name =  exapOrgParentName:VARCHAR},
+			#{exap_org_parent_id =  exapOrgParentId:VARCHAR}
+		where 
+		EXAM_ID =  #{examId:BIGINT}
+  </update>
+</mapper>
