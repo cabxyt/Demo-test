@@ -23,13 +23,13 @@ public class TestController {
 	}
 
 	@RequestMapping(method = { RequestMethod.POST })
-	public String post() {
-		return "post";
+	public Object post(PhExam record) {
+		return phExamService.insert(record);
 	}
 
 	@RequestMapping(method = { RequestMethod.PUT })
-	public String put() {
-		return "put";
+	public Object put(PhExam record) {
+		return phExamService.updateByPrimaryKeySelective(record);
 	}
 
 	@RequestMapping(method = { RequestMethod.PATCH })
@@ -38,7 +38,7 @@ public class TestController {
 	}
 
 	@RequestMapping(method = { RequestMethod.DELETE })
-	public String delete() {
+	public Object delete() {
 		return "delete";
 	}
 }
