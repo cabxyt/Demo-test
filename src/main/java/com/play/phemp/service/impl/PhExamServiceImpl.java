@@ -40,7 +40,7 @@ public class PhExamServiceImpl implements PhExamService {
 	@Override
 	public int updateByPrimaryKeySelective(PhExam record) {
 		// TODO Auto-generated method stub
-		return phExamMapper.updateByPrimaryKey(record);
+		return phExamMapper.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
