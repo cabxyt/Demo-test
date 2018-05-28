@@ -19,5 +19,4 @@ spring:
    # testOnBorrow: false  
    # testOnReturn: false  
 mybatis:   
-  mapperLocations: classpath*:com/xuyantao/ctas/test/entity/xml/*.xml  
-  typeAliasesPackage: com.xuyantao.ctas.test.entity  
+  mapperLocations: classpath*:com/play/phemp/dao/mapper/xml/*.xml  
