@@ -30,7 +30,7 @@ public class ControllerTest {
 
 	@Test
 	public void get() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/phexam")).andDo(MockMvcResultHandlers.print())
+		mockMvc.perform(MockMvcRequestBuilders.get("/phExam")).andDo(MockMvcResultHandlers.print())
 				.andExpect(MockMvcResultMatchers.status().isOk()).andDo(MockMvcResultHandlers.print()).andReturn();
 	}
 
