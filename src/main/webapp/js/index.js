@@ -34,7 +34,6 @@ var vm = new Vue({
 	methods: {
 		getMenuList: function (event) {
 			$.getJSON("sys/menu?_"+$.now(), function(r){
-				alert(r);
 				vm.menuList = r;
 			});
 			/*$.getJSON("js/menu.json", function(data){
