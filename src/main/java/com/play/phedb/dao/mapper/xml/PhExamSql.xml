@@ -110,13 +110,12 @@
 		<if test="exapOrgParentId != null">
    			 AND exap_org_parent_id = #{exapOrgParentId}
   		</if> 
-  		<if test="sidx != null and sidx != ''">
+	  	<if test="sidx != null and sidx != ''">
    			 order by ${sidx} ${order}
   		</if> 
   		<if test="limit != null and page !=null">
    			 limit ${startRow},${limit}
   		</if> 
-
   </select>
   <select id="queryCount"  parameterType="com.play.phedb.dao.entity.PhExam" resultType="int">
     select 
