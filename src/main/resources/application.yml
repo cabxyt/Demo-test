@@ -1,13 +1,16 @@
 server:
   port: 8080
   context-path: /test
-spring:
+logging:
+  level: 
+    com.play.phedb.dao.mapper: DEBUG  
+spring: 
   datasource:  
     name: mydb  
     #type: com.alibaba.druid.pool.DruidDataSource  
     url: jdbc:mysql://192.168.0.26:3306/phedb
     username: wjuser  
-    password: wjbasepwd  
+    password: wjbasepwd 
    # driver-class-name: com.mysql.jdbc.Driver  
    # minIdle: 1  
     #maxActive: 2  
@@ -17,6 +20,6 @@ spring:
    # validationQuery: SELECT 'ZTM' FROM DUAL  
    # testWhileIdle: true  
    # testOnBorrow: false  
-   # testOnReturn: false  
+   # testOnReturn: false
 mybatis:   
-  mapperLocations: classpath*:com/play/phemp/dao/mapper/xml/*.xml  
+  mapperLocations: classpath*:com/play/phedb/dao/mapper/xml/*.xml  

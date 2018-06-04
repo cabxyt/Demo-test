@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <menu-root id="menu-root">
 	<menu icon="fa fa-cog" menuId="1" name="系统管理" type="0" url="" perms="">
-		<menu icon="fa fa-user" menuId="101" name="员工授权查询" type="1" url="" perms=""/>
+		<menu icon="fa fa-user" menuId="101" name="员工授权查询" type="1" url="page/PhExam/PhExam.html" perms=""/>
 		<menu icon="fa fa-th-list" menuId="105" name="数据状态统计" type="2" url="" perms="">
 			<menu icon="fa fa-circle-o" menuId="105" name="机构数据统计" type="3" url="" perms=""/>
 			<menu icon="fa fa-circle-o" menuId="105" name="门店数据统计" type="3" url="" perms=""/>
 		</menu>		
-		<menu icon="fa fa-circle-o" menuId="102" name="体检信息管理" type="1" url="" perms=""/>
+		<menu icon="fa fa-circle-o" menuId="102" name="体检信息管理" type="1" url="phExam/phExam.html" perms=""/>
 	</menu>
 </menu-root>
