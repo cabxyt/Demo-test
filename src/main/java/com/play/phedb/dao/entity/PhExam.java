@@ -7,7 +7,7 @@ import com.play.common.Page;
 /**
  * 员工体检信息
  */
-public class PhExam extends Page {
+public class PhExam extends Page  {
 
 	/**
 	 * 体检ID
