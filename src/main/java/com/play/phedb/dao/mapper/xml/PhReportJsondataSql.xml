@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.play.phedb.dao.mapper.PhReportJsondataMapper" >
+  <sql id="Base_Column_List" >
+		 id id,	  	  	 				
+		 examId examid,	  	  	 				
+		 reportAnaId reportanaid,	  	  	 				
+		 siginDate sigindate,	  	  	 				
+		 createTime createtime,	  	  	 				
+		 reportCode reportcode,	  	  	 				
+		 logId logid,	  	  	 				
+		 remark remark,	  	  	 				
+		 suggest suggest,	  	  	 				
+		 userName username,	  	  	 				
+		 instName instname,	  	  	 				
+		 instGroupId instgroupid,	  	  	 				
+		 idNum idnum	  	  	 				
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.play.phedb.dao.entity.PhReportJsondata" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ph_report_jsondata
+    where id = #{value}
+  </select>
+  <select id="query"  parameterType="com.play.phedb.dao.entity.PhReportJsondata" resultType="com.play.phedb.dao.entity.PhReportJsondata">
+    select 
+    <include refid="Base_Column_List" />
+    from ph_report_jsondata
+    where 1=1
+		<if test="id != null">
+   			 AND id = #{id}
+  		</if> 
+		<if test="examid != null">
+   			 AND examId = #{examid}
+  		</if> 
+		<if test="reportanaid != null">
+   			 AND reportAnaId = #{reportanaid}
+  		</if> 
+		<if test="sigindate != null">
+   			 AND siginDate = #{sigindate}
+  		</if> 
+		<if test="createtime != null">
+   			 AND createTime = #{createtime}
+  		</if> 
+		<if test="reportcode != null">
+   			 AND reportCode = #{reportcode}
+  		</if> 
+		<if test="logid != null">
+   			 AND logId = #{logid}
+  		</if> 
+		<if test="remark != null">
+   			 AND remark = #{remark}
+  		</if> 
+		<if test="suggest != null">
+   			 AND suggest = #{suggest}
+  		</if> 
+		<if test="username != null">
+   			 AND userName = #{username}
+  		</if> 
+		<if test="instname != null">
+   			 AND instName = #{instname}
+  		</if> 
+		<if test="instgroupid != null">
+   			 AND instGroupId = #{instgroupid}
+  		</if> 
+		<if test="idnum != null">
+   			 AND idNum = #{idnum}
+  		</if> 
+	  	<if test="sidx != null and sidx != ''">
+   			 order by ${sidx} ${order}
+  		</if> 
+  		<if test="limit != null and page !=null">
+   			 limit ${startRow},${limit}
+  		</if> 
+  </select>
+  <select id="queryCount"  parameterType="com.play.phedb.dao.entity.PhReportJsondata" resultType="int">
+    select 
+     count(*)
+    from ph_report_jsondata
+    where 1=1
+		<if test="id != null">
+   			 AND id = #{id}
+  		</if> 
+		<if test="examid != null">
+   			 AND examId = #{examid}
+  		</if> 
+		<if test="reportanaid != null">
+   			 AND reportAnaId = #{reportanaid}
+  		</if> 
+		<if test="sigindate != null">
+   			 AND siginDate = #{sigindate}
+  		</if> 
+		<if test="createtime != null">
+   			 AND createTime = #{createtime}
+  		</if> 
+		<if test="reportcode != null">
+   			 AND reportCode = #{reportcode}
+  		</if> 
+		<if test="logid != null">
+   			 AND logId = #{logid}
+  		</if> 
+		<if test="remark != null">
+   			 AND remark = #{remark}
+  		</if> 
+		<if test="suggest != null">
+   			 AND suggest = #{suggest}
+  		</if> 
+		<if test="username != null">
+   			 AND userName = #{username}
+  		</if> 
+		<if test="instname != null">
+   			 AND instName = #{instname}
+  		</if> 
+		<if test="instgroupid != null">
+   			 AND instGroupId = #{instgroupid}
+  		</if> 
+		<if test="idnum != null">
+   			 AND idNum = #{idnum}
+  		</if> 
+  </select>
+  <insert id="insert" parameterType="com.play.phedb.dao.entity.PhReportJsondata" >
+    insert into ph_report_jsondata 
+      (
+		 id,				
+		 examId,				
+		 reportAnaId,				
+		 siginDate,				
+		 createTime,				
+		 reportCode,				
+		 logId,				
+		 remark,				
+		 suggest,				
+		 userName,				
+		 instName,				
+		 instGroupId,				
+		 idNum				
+      )
+    values 
+      (
+		   #{id:NUMERIC},
+		   #{examid:BIGINT},
+		   #{reportanaid:VARCHAR},
+		   #{sigindate:TIMESTAMP},
+		   #{createtime:TIMESTAMP},
+		   #{reportcode:VARCHAR},
+		   #{logid:VARCHAR},
+		   #{remark:VARCHAR},
+		   #{suggest:VARCHAR},
+		   #{username:VARCHAR},
+		   #{instname:VARCHAR},
+		   #{instgroupid:VARCHAR},
+		   #{idnum:VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.play.phedb.dao.entity.PhReportJsondata" >
+		update
+		  ph_report_jsondata
+		set
+			#{examId =  examid:BIGINT},
+			#{reportAnaId =  reportanaid:VARCHAR},
+			#{siginDate =  sigindate:TIMESTAMP},
+			#{createTime =  createtime:TIMESTAMP},
+			#{reportCode =  reportcode:VARCHAR},
+			#{logId =  logid:VARCHAR},
+			#{remark =  remark:VARCHAR},
+			#{suggest =  suggest:VARCHAR},
+			#{userName =  username:VARCHAR},
+			#{instName =  instname:VARCHAR},
+			#{instGroupId =  instgroupid:VARCHAR},
+			#{idNum =  idnum:VARCHAR}
+		where 
+		id =  #{id:NUMERIC}
+  </update>
+</mapper>

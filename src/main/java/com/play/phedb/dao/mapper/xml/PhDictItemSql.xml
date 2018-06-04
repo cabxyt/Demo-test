@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.play.phedb.dao.mapper.PhDictItemMapper" >
+  <sql id="Base_Column_List" >
+		 dict_id dictId,	  	  	 				
+		 dict_type dictType,	  	  	 				
+		 dict_item_code dictItemCode,	  	  	 				
+		 dict_item_name dictItemName,	  	  	 				
+		 show_order showOrder,	  	  	 				
+		 item_status itemStatus,	  	  	 				
+		 remark remark	  	  	 				
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.play.phedb.dao.entity.PhDictItem" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ph_dict_item
+    where dict_id = #{value}
+  </select>
+  <select id="query"  parameterType="com.play.phedb.dao.entity.PhDictItem" resultType="com.play.phedb.dao.entity.PhDictItem">
+    select 
+    <include refid="Base_Column_List" />
+    from ph_dict_item
+    where 1=1
+		<if test="dictId != null">
+   			 AND dict_id = #{dictId}
+  		</if> 
+		<if test="dictType != null">
+   			 AND dict_type = #{dictType}
+  		</if> 
+		<if test="dictItemCode != null">
+   			 AND dict_item_code = #{dictItemCode}
+  		</if> 
+		<if test="dictItemName != null">
+   			 AND dict_item_name = #{dictItemName}
+  		</if> 
+		<if test="showOrder != null">
+   			 AND show_order = #{showOrder}
+  		</if> 
+		<if test="itemStatus != null">
+   			 AND item_status = #{itemStatus}
+  		</if> 
+		<if test="remark != null">
+   			 AND remark = #{remark}
+  		</if> 
+	  	<if test="sidx != null and sidx != ''">
+   			 order by ${sidx} ${order}
+  		</if> 
+  		<if test="limit != null and page !=null">
+   			 limit ${startRow},${limit}
+  		</if> 
+  </select>
+  <select id="queryCount"  parameterType="com.play.phedb.dao.entity.PhDictItem" resultType="int">
+    select 
+     count(*)
+    from ph_dict_item
+    where 1=1
+		<if test="dictId != null">
+   			 AND dict_id = #{dictId}
+  		</if> 
+		<if test="dictType != null">
+   			 AND dict_type = #{dictType}
+  		</if> 
+		<if test="dictItemCode != null">
+   			 AND dict_item_code = #{dictItemCode}
+  		</if> 
+		<if test="dictItemName != null">
+   			 AND dict_item_name = #{dictItemName}
+  		</if> 
+		<if test="showOrder != null">
+   			 AND show_order = #{showOrder}
+  		</if> 
+		<if test="itemStatus != null">
+   			 AND item_status = #{itemStatus}
+  		</if> 
+		<if test="remark != null">
+   			 AND remark = #{remark}
+  		</if> 
+  </select>
+  <insert id="insert" parameterType="com.play.phedb.dao.entity.PhDictItem" >
+    insert into ph_dict_item 
+      (
+		 dict_id,				
+		 dict_type,				
+		 dict_item_code,				
+		 dict_item_name,				
+		 show_order,				
+		 item_status,				
+		 remark				
+      )
+    values 
+      (
+		   #{dictId:NUMERIC},
+		   #{dictType:VARCHAR},
+		   #{dictItemCode:VARCHAR},
+		   #{dictItemName:VARCHAR},
+		   #{showOrder:NUMERIC},
+		   #{itemStatus:NUMERIC},
+		   #{remark:VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.play.phedb.dao.entity.PhDictItem" >
+		update
+		  ph_dict_item
+		set
+			#{dict_type =  dictType:VARCHAR},
+			#{dict_item_code =  dictItemCode:VARCHAR},
+			#{dict_item_name =  dictItemName:VARCHAR},
+			#{show_order =  showOrder:NUMERIC},
+			#{item_status =  itemStatus:NUMERIC},
+			#{remark =  remark:VARCHAR}
+		where 
+		dict_id =  #{dictId:NUMERIC}
+  </update>
+</mapper>

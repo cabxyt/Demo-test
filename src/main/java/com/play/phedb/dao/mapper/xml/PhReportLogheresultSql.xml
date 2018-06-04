@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.play.phedb.dao.mapper.PhReportLogheresultMapper" >
+  <sql id="Base_Column_List" >
+		 id id,	  	  	 				
+		 doctor doctor,	  	  	 				
+		 logReportId logreportid,	  	  	 				
+		 resultValue resultvalue,	  	  	 				
+		 unit unit,	  	  	 				
+		 resultId resultid,	  	  	 				
+		 createTime createtime,	  	  	 				
+		 reportCode reportcode,	  	  	 				
+		 dictName dictname,	  	  	 				
+		 examTime examtime,	  	  	 				
+		 dictDepart dictdepart,	  	  	 				
+		 refValue refvalue,	  	  	 				
+		 status status	  	  	 				
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.play.phedb.dao.entity.PhReportLogheresult" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ph_report_logheresult
+    where id = #{value}
+  </select>
+  <select id="query"  parameterType="com.play.phedb.dao.entity.PhReportLogheresult" resultType="com.play.phedb.dao.entity.PhReportLogheresult">
+    select 
+    <include refid="Base_Column_List" />
+    from ph_report_logheresult
+    where 1=1
+		<if test="id != null">
+   			 AND id = #{id}
+  		</if> 
+		<if test="doctor != null">
+   			 AND doctor = #{doctor}
+  		</if> 
+		<if test="logreportid != null">
+   			 AND logReportId = #{logreportid}
+  		</if> 
+		<if test="resultvalue != null">
+   			 AND resultValue = #{resultvalue}
+  		</if> 
+		<if test="unit != null">
+   			 AND unit = #{unit}
+  		</if> 
+		<if test="resultid != null">
+   			 AND resultId = #{resultid}
+  		</if> 
+		<if test="createtime != null">
+   			 AND createTime = #{createtime}
+  		</if> 
+		<if test="reportcode != null">
+   			 AND reportCode = #{reportcode}
+  		</if> 
+		<if test="dictname != null">
+   			 AND dictName = #{dictname}
+  		</if> 
+		<if test="examtime != null">
+   			 AND examTime = #{examtime}
+  		</if> 
+		<if test="dictdepart != null">
+   			 AND dictDepart = #{dictdepart}
+  		</if> 
+		<if test="refvalue != null">
+   			 AND refValue = #{refvalue}
+  		</if> 
+		<if test="status != null">
+   			 AND status = #{status}
+  		</if> 
+	  	<if test="sidx != null and sidx != ''">
+   			 order by ${sidx} ${order}
+  		</if> 
+  		<if test="limit != null and page !=null">
+   			 limit ${startRow},${limit}
+  		</if> 
+  </select>
+  <select id="queryCount"  parameterType="com.play.phedb.dao.entity.PhReportLogheresult" resultType="int">
+    select 
+     count(*)
+    from ph_report_logheresult
+    where 1=1
+		<if test="id != null">
+   			 AND id = #{id}
+  		</if> 
+		<if test="doctor != null">
+   			 AND doctor = #{doctor}
+  		</if> 
+		<if test="logreportid != null">
+   			 AND logReportId = #{logreportid}
+  		</if> 
+		<if test="resultvalue != null">
+   			 AND resultValue = #{resultvalue}
+  		</if> 
+		<if test="unit != null">
+   			 AND unit = #{unit}
+  		</if> 
+		<if test="resultid != null">
+   			 AND resultId = #{resultid}
+  		</if> 
+		<if test="createtime != null">
+   			 AND createTime = #{createtime}
+  		</if> 
+		<if test="reportcode != null">
+   			 AND reportCode = #{reportcode}
+  		</if> 
+		<if test="dictname != null">
+   			 AND dictName = #{dictname}
+  		</if> 
+		<if test="examtime != null">
+   			 AND examTime = #{examtime}
+  		</if> 
+		<if test="dictdepart != null">
+   			 AND dictDepart = #{dictdepart}
+  		</if> 
+		<if test="refvalue != null">
+   			 AND refValue = #{refvalue}
+  		</if> 
+		<if test="status != null">
+   			 AND status = #{status}
+  		</if> 
+  </select>
+  <insert id="insert" parameterType="com.play.phedb.dao.entity.PhReportLogheresult" >
+    insert into ph_report_logheresult 
+      (
+		 id,				
+		 doctor,				
+		 logReportId,				
+		 resultValue,				
+		 unit,				
+		 resultId,				
+		 createTime,				
+		 reportCode,				
+		 dictName,				
+		 examTime,				
+		 dictDepart,				
+		 refValue,				
+		 status				
+      )
+    values 
+      (
+		   #{id:NUMERIC},
+		   #{doctor:VARCHAR},
+		   #{logreportid:VARCHAR},
+		   #{resultvalue:VARCHAR},
+		   #{unit:VARCHAR},
+		   #{resultid:VARCHAR},
+		   #{createtime:TIMESTAMP},
+		   #{reportcode:VARCHAR},
+		   #{dictname:VARCHAR},
+		   #{examtime:TIMESTAMP},
+		   #{dictdepart:VARCHAR},
+		   #{refvalue:VARCHAR},
+		   #{status:VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.play.phedb.dao.entity.PhReportLogheresult" >
+		update
+		  ph_report_logheresult
+		set
+			#{doctor =  doctor:VARCHAR},
+			#{logReportId =  logreportid:VARCHAR},
+			#{resultValue =  resultvalue:VARCHAR},
+			#{unit =  unit:VARCHAR},
+			#{resultId =  resultid:VARCHAR},
+			#{createTime =  createtime:TIMESTAMP},
+			#{reportCode =  reportcode:VARCHAR},
+			#{dictName =  dictname:VARCHAR},
+			#{examTime =  examtime:TIMESTAMP},
+			#{dictDepart =  dictdepart:VARCHAR},
+			#{refValue =  refvalue:VARCHAR},
+			#{status =  status:VARCHAR}
+		where 
+		id =  #{id:NUMERIC}
+  </update>
+</mapper>

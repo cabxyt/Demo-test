@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.play.phedb.dao.mapper.PhReportDataMapper" >
+  <sql id="Base_Column_List" >
+		 EXAM_ID examId,	  	  	 				
+		 EXAM_DATA examData,	  	  	 				
+		 CREATE_TIME createTime	  	  	 				
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.play.phedb.dao.entity.PhReportData" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ph_report_data
+    where EXAM_ID = #{value}
+  </select>
+  <select id="query"  parameterType="com.play.phedb.dao.entity.PhReportData" resultType="com.play.phedb.dao.entity.PhReportData">
+    select 
+    <include refid="Base_Column_List" />
+    from ph_report_data
+    where 1=1
+		<if test="examId != null">
+   			 AND EXAM_ID = #{examId}
+  		</if> 
+		<if test="examData != null">
+   			 AND EXAM_DATA = #{examData}
+  		</if> 
+		<if test="createTime != null">
+   			 AND CREATE_TIME = #{createTime}
+  		</if> 
+	  	<if test="sidx != null and sidx != ''">
+   			 order by ${sidx} ${order}
+  		</if> 
+  		<if test="limit != null and page !=null">
+   			 limit ${startRow},${limit}
+  		</if> 
+  </select>
+  <select id="queryCount"  parameterType="com.play.phedb.dao.entity.PhReportData" resultType="int">
+    select 
+     count(*)
+    from ph_report_data
+    where 1=1
+		<if test="examId != null">
+   			 AND EXAM_ID = #{examId}
+  		</if> 
+		<if test="examData != null">
+   			 AND EXAM_DATA = #{examData}
+  		</if> 
+		<if test="createTime != null">
+   			 AND CREATE_TIME = #{createTime}
+  		</if> 
+  </select>
+  <insert id="insert" parameterType="com.play.phedb.dao.entity.PhReportData" >
+    insert into ph_report_data 
+      (
+		 EXAM_ID,				
+		 EXAM_DATA,				
+		 CREATE_TIME				
+      )
+    values 
+      (
+		   #{examId:BIGINT},
+		   #{examData:VARCHAR},
+		   #{createTime:TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.play.phedb.dao.entity.PhReportData" >
+		update
+		  ph_report_data
+		set
+			#{EXAM_DATA =  examData:VARCHAR},
+			#{CREATE_TIME =  createTime:TIMESTAMP}
+		where 
+		EXAM_ID =  #{examId:BIGINT}
+  </update>
+</mapper>

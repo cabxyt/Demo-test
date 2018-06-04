@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.play.phedb.dao.mapper.PhEmpIdentityMapper" >
+  <sql id="Base_Column_List" >
+		 EMP_ID empId,	  	  	 				
+		 UNIQU_NO uniquNo,	  	  	 				
+		 EMP_NAME empName,	  	  	 				
+		 ID_TYPE idType,	  	  	 				
+		 GENDER gender,	  	  	 				
+		 ID_CODE idCode,	  	  	 				
+		 MOBILE mobile,	  	  	 				
+		 EMAIL email,	  	  	 				
+		 BIRTH_DATE birthDate,	  	  	 				
+		 NATION nation,	  	  	 				
+		 COUNTRY country,	  	  	 				
+		 AUTH_FLAG authFlag,	  	  	 				
+		 ACCESS_TOKEN accessToken,	  	  	 				
+		 TOKEN_TIME tokenTime,	  	  	 				
+		 CREATOR creator,	  	  	 				
+		 CREATOR_NAME creatorName,	  	  	 				
+		 CREATE_TIME createTime,	  	  	 				
+		 userid userid	  	  	 				
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.play.phedb.dao.entity.PhEmpIdentity" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ph_emp_identity
+    where EMP_ID = #{value}
+  </select>
+  <select id="query"  parameterType="com.play.phedb.dao.entity.PhEmpIdentity" resultType="com.play.phedb.dao.entity.PhEmpIdentity">
+    select 
+    <include refid="Base_Column_List" />
+    from ph_emp_identity
+    where 1=1
+		<if test="empId != null">
+   			 AND EMP_ID = #{empId}
+  		</if> 
+		<if test="uniquNo != null">
+   			 AND UNIQU_NO = #{uniquNo}
+  		</if> 
+		<if test="empName != null">
+   			 AND EMP_NAME = #{empName}
+  		</if> 
+		<if test="idType != null">
+   			 AND ID_TYPE = #{idType}
+  		</if> 
+		<if test="gender != null">
+   			 AND GENDER = #{gender}
+  		</if> 
+		<if test="idCode != null">
+   			 AND ID_CODE = #{idCode}
+  		</if> 
+		<if test="mobile != null">
+   			 AND MOBILE = #{mobile}
+  		</if> 
+		<if test="email != null">
+   			 AND EMAIL = #{email}
+  		</if> 
+		<if test="birthDate != null">
+   			 AND BIRTH_DATE = #{birthDate}
+  		</if> 
+		<if test="nation != null">
+   			 AND NATION = #{nation}
+  		</if> 
+		<if test="country != null">
+   			 AND COUNTRY = #{country}
+  		</if> 
+		<if test="authFlag != null">
+   			 AND AUTH_FLAG = #{authFlag}
+  		</if> 
+		<if test="accessToken != null">
+   			 AND ACCESS_TOKEN = #{accessToken}
+  		</if> 
+		<if test="tokenTime != null">
+   			 AND TOKEN_TIME = #{tokenTime}
+  		</if> 
+		<if test="creator != null">
+   			 AND CREATOR = #{creator}
+  		</if> 
+		<if test="creatorName != null">
+   			 AND CREATOR_NAME = #{creatorName}
+  		</if> 
+		<if test="createTime != null">
+   			 AND CREATE_TIME = #{createTime}
+  		</if> 
+		<if test="userid != null">
+   			 AND userid = #{userid}
+  		</if> 
+	  	<if test="sidx != null and sidx != ''">
+   			 order by ${sidx} ${order}
+  		</if> 
+  		<if test="limit != null and page !=null">
+   			 limit ${startRow},${limit}
+  		</if> 
+  </select>
+  <select id="queryCount"  parameterType="com.play.phedb.dao.entity.PhEmpIdentity" resultType="int">
+    select 
+     count(*)
+    from ph_emp_identity
+    where 1=1
+		<if test="empId != null">
+   			 AND EMP_ID = #{empId}
+  		</if> 
+		<if test="uniquNo != null">
+   			 AND UNIQU_NO = #{uniquNo}
+  		</if> 
+		<if test="empName != null">
+   			 AND EMP_NAME = #{empName}
+  		</if> 
+		<if test="idType != null">
+   			 AND ID_TYPE = #{idType}
+  		</if> 
+		<if test="gender != null">
+   			 AND GENDER = #{gender}
+  		</if> 
+		<if test="idCode != null">
+   			 AND ID_CODE = #{idCode}
+  		</if> 
+		<if test="mobile != null">
+   			 AND MOBILE = #{mobile}
+  		</if> 
+		<if test="email != null">
+   			 AND EMAIL = #{email}
+  		</if> 
+		<if test="birthDate != null">
+   			 AND BIRTH_DATE = #{birthDate}
+  		</if> 
+		<if test="nation != null">
+   			 AND NATION = #{nation}
+  		</if> 
+		<if test="country != null">
+   			 AND COUNTRY = #{country}
+  		</if> 
+		<if test="authFlag != null">
+   			 AND AUTH_FLAG = #{authFlag}
+  		</if> 
+		<if test="accessToken != null">
+   			 AND ACCESS_TOKEN = #{accessToken}
+  		</if> 
+		<if test="tokenTime != null">
+   			 AND TOKEN_TIME = #{tokenTime}
+  		</if> 
+		<if test="creator != null">
+   			 AND CREATOR = #{creator}
+  		</if> 
+		<if test="creatorName != null">
+   			 AND CREATOR_NAME = #{creatorName}
+  		</if> 
+		<if test="createTime != null">
+   			 AND CREATE_TIME = #{createTime}
+  		</if> 
+		<if test="userid != null">
+   			 AND userid = #{userid}
+  		</if> 
+  </select>
+  <insert id="insert" parameterType="com.play.phedb.dao.entity.PhEmpIdentity" >
+    insert into ph_emp_identity 
+      (
+		 EMP_ID,				
+		 UNIQU_NO,				
+		 EMP_NAME,				
+		 ID_TYPE,				
+		 GENDER,				
+		 ID_CODE,				
+		 MOBILE,				
+		 EMAIL,				
+		 BIRTH_DATE,				
+		 NATION,				
+		 COUNTRY,				
+		 AUTH_FLAG,				
+		 ACCESS_TOKEN,				
+		 TOKEN_TIME,				
+		 CREATOR,				
+		 CREATOR_NAME,				
+		 CREATE_TIME,				
+		 userid				
+      )
+    values 
+      (
+		   #{empId:BIGINT},
+		   #{uniquNo:BIGINT},
+		   #{empName:VARCHAR},
+		   #{idType:NUMERIC},
+		   #{gender:NUMERIC},
+		   #{idCode:VARCHAR},
+		   #{mobile:VARCHAR},
+		   #{email:VARCHAR},
+		   #{birthDate:TIMESTAMP},
+		   #{nation:NUMERIC},
+		   #{country:VARCHAR},
+		   #{authFlag:NUMERIC},
+		   #{accessToken:VARCHAR},
+		   #{tokenTime:TIMESTAMP},
+		   #{creator:VARCHAR},
+		   #{creatorName:VARCHAR},
+		   #{createTime:TIMESTAMP},
+		   #{userid:VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.play.phedb.dao.entity.PhEmpIdentity" >
+		update
+		  ph_emp_identity
+		set
+			#{UNIQU_NO =  uniquNo:BIGINT},
+			#{EMP_NAME =  empName:VARCHAR},
+			#{ID_TYPE =  idType:NUMERIC},
+			#{GENDER =  gender:NUMERIC},
+			#{ID_CODE =  idCode:VARCHAR},
+			#{MOBILE =  mobile:VARCHAR},
+			#{EMAIL =  email:VARCHAR},
+			#{BIRTH_DATE =  birthDate:TIMESTAMP},
+			#{NATION =  nation:NUMERIC},
+			#{COUNTRY =  country:VARCHAR},
+			#{AUTH_FLAG =  authFlag:NUMERIC},
+			#{ACCESS_TOKEN =  accessToken:VARCHAR},
+			#{TOKEN_TIME =  tokenTime:TIMESTAMP},
+			#{CREATOR =  creator:VARCHAR},
+			#{CREATOR_NAME =  creatorName:VARCHAR},
+			#{CREATE_TIME =  createTime:TIMESTAMP},
+			#{userid =  userid:VARCHAR}
+		where 
+		EMP_ID =  #{empId:BIGINT}
+  </update>
+</mapper>
