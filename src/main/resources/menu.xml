@@ -7,5 +7,15 @@
 		<menu icon="fa fa-circle-o" menuId="102" name="PhReportData" type="1" url="page/PhReportData/PhReportData.html" perms=""/>
 		<menu icon="fa fa-circle-o" menuId="101" name="PhReportJsonData" type="1" url="page/PhReportJsondata/PhReportJsondata.html" perms=""/>	
 		<menu icon="fa fa-circle-o" menuId="102" name="PhReportLogheresult" type="1" url="page/PhReportLogheresult/PhReportLogheresult.html" perms=""/>
+		<menu icon="fa fa-circle-o" menuId="102" name="SysOrganization" type="1" url="page/SysOrganization/SysOrganization.html" perms=""/>
+		<menu icon="fa fa-circle-o" menuId="102" name="SysResource" type="1" url="page/SysResource/SysResource.html" perms=""/>
+		<menu icon="fa fa-circle-o" menuId="102" name="SysRole" type="1" url="page/SysRole/SysRole.html" perms=""/>
+		<menu icon="fa fa-circle-o" menuId="102" name="SysUser" type="1" url="page/SysUser/SysUser.html" perms=""/>
+	</menu>	
+	<menu icon="fa fa-cog" menuId="1" name="功能菜单" type="0" url="" perms="">
+		<menu icon="fa fa-circle-o" menuId="101" name="组织管理" type="1" url="organization" perms=""/>	
+		<menu icon="fa fa-circle-o" menuId="102" name="用户管理" type="1" url="user" perms=""/>
+		<menu icon="fa fa-circle-o" menuId="101" name="资源管理" type="1" url="resource" perms=""/>	
+		<menu icon="fa fa-circle-o" menuId="102" name="角色管理" type="1" url="role" perms=""/>
 	</menu>
 </menu-root>

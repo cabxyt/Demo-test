@@ -5,10 +5,14 @@ logging:
   level: 
     com.play.phedb.dao.mapper: DEBUG  
 spring: 
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
   datasource:  
     name: mydb  
     #type: com.alibaba.druid.pool.DruidDataSource  
-    url: jdbc:mysql://192.168.0.26:3306/phedb
+    url: jdbc:mysql://127.0.0.1:3306/phedb?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: wjuser  
     password: wjbasepwd 
    # driver-class-name: com.mysql.jdbc.Driver  

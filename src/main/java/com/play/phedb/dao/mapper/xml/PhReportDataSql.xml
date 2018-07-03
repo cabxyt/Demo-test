@@ -10,7 +10,7 @@
     select 
     <include refid="Base_Column_List" />
     from ph_report_data
-    where EXAM_ID = #{value}
+    where UNKNOWN_KEY = #{value}
   </select>
   <select id="query"  parameterType="com.play.phedb.dao.entity.PhReportData" resultType="com.play.phedb.dao.entity.PhReportData">
     select 
@@ -66,9 +66,10 @@
 		update
 		  ph_report_data
 		set
+			#{EXAM_ID =  examId:BIGINT},
 			#{EXAM_DATA =  examData:VARCHAR},
 			#{CREATE_TIME =  createTime:TIMESTAMP}
 		where 
-		EXAM_ID =  #{examId:BIGINT}
+		UNKNOWN_KEY =  #{UNKNOWN_KEY:VARCHAR}
   </update>
 </mapper>

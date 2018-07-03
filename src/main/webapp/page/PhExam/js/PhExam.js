@@ -24,9 +24,9 @@ $(function () {
 			{ label: '', name: 'uploadReportTime'},
 			{ label: '从体检机构取回分析结果的时间', name: 'getDataTime'},
 			{ label: '创建时间', name: 'createTime'},
-			{ label: '', name: 'examError'},
 			{ label: '', name: 'exapOrgParentName'},
-			{ label: '', name: 'exapOrgParentId'}
+			{ label: '', name: 'exapOrgParentId'},
+			{ label: '', name: 'examError'}
         ],
 		viewrecords: true,
         height: 400,

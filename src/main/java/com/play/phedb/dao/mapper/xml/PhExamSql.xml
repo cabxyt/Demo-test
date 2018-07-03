@@ -23,9 +23,9 @@
 		 UPLOAD_REPORT_TIME uploadReportTime,	  	  	 				
 		 GET_DATA_TIME getDataTime,	  	  	 				
 		 CREATE_TIME createTime,	  	  	 				
-		 EXAM_ERROR examError,	  	  	 				
-		 exap_org_parent_name exapOrgParentName,	  	  	 				
-		 exap_org_parent_id exapOrgParentId	  	  	 				
+		 EXAP_ORG_PARENT_NAME exapOrgParentName,	  	  	 				
+		 EXAP_ORG_PARENT_ID exapOrgParentId,	  	  	 				
+		 EXAM_ERROR examError	  	  	 				
   </sql>
   <select id="selectByPrimaryKey" resultType="com.play.phedb.dao.entity.PhExam" parameterType="java.lang.Long" >
     select 
@@ -101,14 +101,14 @@
 		<if test="createTime != null">
    			 AND CREATE_TIME = #{createTime}
   		</if> 
-		<if test="examError != null">
-   			 AND EXAM_ERROR = #{examError}
-  		</if> 
 		<if test="exapOrgParentName != null">
-   			 AND exap_org_parent_name = #{exapOrgParentName}
+   			 AND EXAP_ORG_PARENT_NAME = #{exapOrgParentName}
   		</if> 
 		<if test="exapOrgParentId != null">
-   			 AND exap_org_parent_id = #{exapOrgParentId}
+   			 AND EXAP_ORG_PARENT_ID = #{exapOrgParentId}
+  		</if> 
+		<if test="examError != null">
+   			 AND EXAM_ERROR = #{examError}
   		</if> 
 	  	<if test="sidx != null and sidx != ''">
    			 order by ${sidx} ${order}
@@ -185,14 +185,14 @@
 		<if test="createTime != null">
    			 AND CREATE_TIME = #{createTime}
   		</if> 
-		<if test="examError != null">
-   			 AND EXAM_ERROR = #{examError}
-  		</if> 
 		<if test="exapOrgParentName != null">
-   			 AND exap_org_parent_name = #{exapOrgParentName}
+   			 AND EXAP_ORG_PARENT_NAME = #{exapOrgParentName}
   		</if> 
 		<if test="exapOrgParentId != null">
-   			 AND exap_org_parent_id = #{exapOrgParentId}
+   			 AND EXAP_ORG_PARENT_ID = #{exapOrgParentId}
+  		</if> 
+		<if test="examError != null">
+   			 AND EXAM_ERROR = #{examError}
   		</if> 
   </select>
   <insert id="insert" parameterType="com.play.phedb.dao.entity.PhExam" >
@@ -219,9 +219,9 @@
 		 UPLOAD_REPORT_TIME,				
 		 GET_DATA_TIME,				
 		 CREATE_TIME,				
-		 EXAM_ERROR,				
-		 exap_org_parent_name,				
-		 exap_org_parent_id				
+		 EXAP_ORG_PARENT_NAME,				
+		 EXAP_ORG_PARENT_ID,				
+		 EXAM_ERROR				
       )
     values 
       (
@@ -246,9 +246,9 @@
 		   #{uploadReportTime:TIMESTAMP},
 		   #{getDataTime:TIMESTAMP},
 		   #{createTime:TIMESTAMP},
-		   #{examError:VARCHAR},
 		   #{exapOrgParentName:VARCHAR},
-		   #{exapOrgParentId:VARCHAR}
+		   #{exapOrgParentId:VARCHAR},
+		   #{examError:VARCHAR}
       )
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.play.phedb.dao.entity.PhExam" >
@@ -275,9 +275,9 @@
 			#{UPLOAD_REPORT_TIME =  uploadReportTime:TIMESTAMP},
 			#{GET_DATA_TIME =  getDataTime:TIMESTAMP},
 			#{CREATE_TIME =  createTime:TIMESTAMP},
-			#{EXAM_ERROR =  examError:VARCHAR},
-			#{exap_org_parent_name =  exapOrgParentName:VARCHAR},
-			#{exap_org_parent_id =  exapOrgParentId:VARCHAR}
+			#{EXAP_ORG_PARENT_NAME =  exapOrgParentName:VARCHAR},
+			#{EXAP_ORG_PARENT_ID =  exapOrgParentId:VARCHAR},
+			#{EXAM_ERROR =  examError:VARCHAR}
 		where 
 		EXAM_ID =  #{examId:BIGINT}
   </update>

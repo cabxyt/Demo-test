@@ -96,7 +96,27 @@
         <li class="header">导航菜单</li>
         
         <!-- vue生成的菜单 -->
-        <template v-for="item in menuList">
+        		<li v-for="item in menuList" v-if="item.parentId==0 " class="treeview">
+ 	          		<a href="javascript:;">
+	            			<span>{{item.name}}</span>
+	            		<i class="fa fa-angle-left pull-right"></i>
+	          		</a>
+	          		<ul class="treeview-menu">
+	          				<li v-for="item1 in menuList" v-if="item1.parentId==item.id ">
+	          		  			<a :href="'#'+item1.url">{{item1.name}}         					
+	          		  					<span v-for="item3 in menuList" class="pull-right-container" v-if="item3.parentId==item1.id">
+		                 			 		<i class="fa fa-angle-left pull-right"></i>
+		               					</span>	
+	          		  			</a>
+ 	          					<ul class="treeview-menu" v-for="item2 in menuList" v-if="item2.parentId==item1.id ">  					
+										<li >
+	          		 						<a :href="'#'+item2.url"> {{item2.name}}</a>
+	          							</li>
+		              			</ul> 
+	          				</li>	
+	         		</ul>       			
+        		</li>
+      <!--  <template v-for="item in menuList">
         	<li v-if="item.type==0" class="treeview">
 	          <a href="javascript:;">
 	            <i v-if="item.icon != null" :class="item.icon"></i> 
@@ -125,7 +145,7 @@
 	          	</template>
 	          </ul>
         	</li>
-        </template>
+        </template>  -->
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -191,6 +211,7 @@
 </div>
 
 </div>
+
 <!-- ./wrapper -->
 
 <script src="statics/libs/jquery.min.js"></script>

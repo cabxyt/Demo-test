@@ -20,7 +20,7 @@
     select 
     <include refid="Base_Column_List" />
     from ph_report_jsondata
-    where id = #{value}
+    where UNKNOWN_KEY = #{value}
   </select>
   <select id="query"  parameterType="com.play.phedb.dao.entity.PhReportJsondata" resultType="com.play.phedb.dao.entity.PhReportJsondata">
     select 
@@ -156,6 +156,7 @@
 		update
 		  ph_report_jsondata
 		set
+			#{id =  id:NUMERIC},
 			#{examId =  examid:BIGINT},
 			#{reportAnaId =  reportanaid:VARCHAR},
 			#{siginDate =  sigindate:TIMESTAMP},
@@ -169,6 +170,6 @@
 			#{instGroupId =  instgroupid:VARCHAR},
 			#{idNum =  idnum:VARCHAR}
 		where 
-		id =  #{id:NUMERIC}
+		UNKNOWN_KEY =  #{UNKNOWN_KEY:VARCHAR}
   </update>
 </mapper>

@@ -14,7 +14,7 @@
     select 
     <include refid="Base_Column_List" />
     from ph_dict_item
-    where dict_id = #{value}
+    where UNKNOWN_KEY = #{value}
   </select>
   <select id="query"  parameterType="com.play.phedb.dao.entity.PhDictItem" resultType="com.play.phedb.dao.entity.PhDictItem">
     select 
@@ -102,6 +102,7 @@
 		update
 		  ph_dict_item
 		set
+			#{dict_id =  dictId:NUMERIC},
 			#{dict_type =  dictType:VARCHAR},
 			#{dict_item_code =  dictItemCode:VARCHAR},
 			#{dict_item_name =  dictItemName:VARCHAR},
@@ -109,6 +110,6 @@
 			#{item_status =  itemStatus:NUMERIC},
 			#{remark =  remark:VARCHAR}
 		where 
-		dict_id =  #{dictId:NUMERIC}
+		UNKNOWN_KEY =  #{UNKNOWN_KEY:VARCHAR}
   </update>
 </mapper>

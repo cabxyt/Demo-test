@@ -55,21 +55,21 @@ public class SysLoginController {
 		if (!captcha.equalsIgnoreCase(kaptcha)) {
 			return "验证码不正确";
 		}
-//		try {
-//			Subject subject = SecurityUtils.getSubject();
-//			// sha256加密
-//			// password = new Sha256Hash(password).toHex();
-//			UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-//			subject.login(token);
-//		} catch (UnknownAccountException e) {
-//			return e.getMessage();
-//		} catch (IncorrectCredentialsException e) {
-//			return e.getMessage();
-//		} catch (LockedAccountException e) {
-//			return e.getMessage();
-//		} catch (AuthenticationException e) {
-//			return "账户验证失败";
-//		}
+		try {
+			Subject subject = SecurityUtils.getSubject();
+			// sha256加密
+			// password = new Sha256Hash(password).toHex();
+			UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+			subject.login(token);
+		} catch (UnknownAccountException e) {
+			return e.getMessage();
+		} catch (IncorrectCredentialsException e) {
+			return e.getMessage();
+		} catch (LockedAccountException e) {
+			return e.getMessage();
+		} catch (AuthenticationException e) {
+			return "账户验证失败";
+		}
 
 		return "true";
 
@@ -78,10 +78,11 @@ public class SysLoginController {
 	/**
 	 * 
 	 */
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
-	public String logout() {
-		return "redirect:login.html";
-	}
+//	@RequestMapping(value = "logout", method = RequestMethod.GET)
+//	public String logout() {
+//		SecurityUtils.getSubject().logout();
+//		return "redirect:login.html";
+//	}
 
 	/**
 	 *

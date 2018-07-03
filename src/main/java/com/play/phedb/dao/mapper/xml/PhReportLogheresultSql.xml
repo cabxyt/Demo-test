@@ -20,7 +20,7 @@
     select 
     <include refid="Base_Column_List" />
     from ph_report_logheresult
-    where id = #{value}
+    where UNKNOWN_KEY = #{value}
   </select>
   <select id="query"  parameterType="com.play.phedb.dao.entity.PhReportLogheresult" resultType="com.play.phedb.dao.entity.PhReportLogheresult">
     select 
@@ -156,6 +156,7 @@
 		update
 		  ph_report_logheresult
 		set
+			#{id =  id:NUMERIC},
 			#{doctor =  doctor:VARCHAR},
 			#{logReportId =  logreportid:VARCHAR},
 			#{resultValue =  resultvalue:VARCHAR},
@@ -169,6 +170,6 @@
 			#{refValue =  refvalue:VARCHAR},
 			#{status =  status:VARCHAR}
 		where 
-		id =  #{id:NUMERIC}
+		UNKNOWN_KEY =  #{UNKNOWN_KEY:VARCHAR}
   </update>
 </mapper>

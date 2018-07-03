@@ -117,17 +117,17 @@ public class PhExam extends Page  {
 	/**
 	 * 
 	 */
-	private String examError; 
-	
-	/**
-	 * 
-	 */
 	private String exapOrgParentName; 
 	
 	/**
 	 * 
 	 */
 	private String exapOrgParentId; 
+	
+	/**
+	 * 
+	 */
+	private String examError; 
 	
 	
 	/**
@@ -427,20 +427,6 @@ public class PhExam extends Page  {
 	/**
 	 * 璇诲彇
 	 */
-	public String getExamError(){
-		return examError;
-	} 
-	
-	/**
-	 * 璁剧疆 
-	 */
-	public void setExamError(String examError){
-		this.examError = examError;
-	}
-	
-	/**
-	 * 璇诲彇
-	 */
 	public String getExapOrgParentName(){
 		return exapOrgParentName;
 	} 
@@ -464,6 +450,20 @@ public class PhExam extends Page  {
 	 */
 	public void setExapOrgParentId(String exapOrgParentId){
 		this.exapOrgParentId = exapOrgParentId;
+	}
+	
+	/**
+	 * 璇诲彇
+	 */
+	public String getExamError(){
+		return examError;
+	} 
+	
+	/**
+	 * 璁剧疆 
+	 */
+	public void setExamError(String examError){
+		this.examError = examError;
 	}
 	
 	
